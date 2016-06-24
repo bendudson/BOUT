@@ -37,7 +37,7 @@ end
 ;                         Added multi-dimensional averaging capabillity
 ;
 
-pro growth_rms, f, time=t, rmsgrowth=rmsgrowth, dcgrowth=dcgrowth, average=average, xaverage=xaverage, yaverage=yaverage 
+pro growth_rms, f, time=time, rmsgrowth=rmsgrowth, dcgrowth=dcgrowth, average=average, xaverage=xaverage, yaverage=yaverage 
 
   d = size(f)
   dt = d[0]
@@ -57,12 +57,12 @@ pro growth_rms, f, time=t, rmsgrowth=rmsgrowth, dcgrowth=dcgrowth, average=avera
     case dt of
       3: begin
            favg = mean(f,dim=1)
-           growth_rms, favg, time=t, rmsgrowth=rmsgrowth, dcgrowth=dcgrowth
+           growth_rms, favg, time=time, rmsgrowth=rmsgrowth, dcgrowth=dcgrowth
          end
       4: begin
            if avg_y then favg = mean(f,dim=2)
            if avg_x then favg = mean(favg,dim=1)
-	   growth_rms, favg, time=t, rmsgrowth=rmsgrowth, dcgrowth=dcgrowth
+	   growth_rms, favg, time=time, rmsgrowth=rmsgrowth, dcgrowth=dcgrowth
          end
         default: print, 'ERROR: growth_rate requires data that is 2d-4d'
     endcase  

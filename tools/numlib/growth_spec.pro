@@ -41,12 +41,12 @@ pro growth_spec, fz, time=time, spectrum=fk, lambdak=lambdak, growthk=growthk, f
     case d[0] of
       3: begin
            favg = mean(fz,dim=1)
-           growth_spec, favg, time=t, spectrum=fk, lambdak=lambdak, growthk=growthk, freqk=freqk, ac=ac
+           growth_spec, favg, time=time, spectrum=fk, lambdak=lambdak, growthk=growthk, freqk=freqk, ac=ac
          end
       4: begin
            if avgy then favg = mean(fz,dim=2)
            if avgx then favg = mean(favg,dim=1)
-	   growth_spec, favg, time=t, spectrum=fk, lambdak=lambdak, growthk=growthk, freqk=freqk, ac=ac
+	   growth_spec, favg, time=time, spectrum=fk, lambdak=lambdak, growthk=growthk, freqk=freqk, ac=ac
          end
         default: print, 'ERROR: growth_spec requires an fz that is 1d-4d'
     endcase  
